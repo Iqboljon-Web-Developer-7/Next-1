@@ -2,10 +2,13 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import MobileNav from "../navHeader/NavHeader";
+import MobileNav from "../../home/navHeader/NavHeader";
 
 import { RiMenu5Line } from "react-icons/ri";
-import { BiSolidHeart } from "react-icons/bi";
+
+import { CiUser } from "react-icons/ci";
+import { IoSearchOutline } from "react-icons/io5";
+import { FaRegHeart } from "react-icons/fa";
 import { IoCartOutline } from "react-icons/io5";
 
 import logo from "@/assets/header/website-logo.svg";
@@ -26,18 +29,16 @@ const Header = () => {
           </Link>
         </div>
         <nav className="header__nav hidden lg:flex gap-5 font-light">
+          <Link href={"/"}>Home</Link>
+          <Link href={"/shop"}>Shop</Link>
           <Link href={"/about"}>About</Link>
-          <Link href={"/blog"}>Blog</Link>
-          <Link href={"*"}>404</Link>
-          <Link href={"/contact"}>contact</Link>
+          <Link href={"/contact"}>Contact</Link>
         </nav>
-        <div className="header__contact flex items-center justify-center gap-6 ">
-          <Link href={"/wishList"}>
-            <BiSolidHeart className="text-2xl" />
-          </Link>
-          <Link href={"/cart"}>
-            <IoCartOutline className="text-2xl" />
-          </Link>
+        <div className="header__contact flex items-center justify-center gap-6 text-2xl">
+          <CiUser />
+          <IoSearchOutline />
+          <FaRegHeart />
+          <IoCartOutline />
           <RiMenu5Line
             className="lg:hidden text-3xl"
             onClick={() => setIsOpen((prev) => !prev)}
