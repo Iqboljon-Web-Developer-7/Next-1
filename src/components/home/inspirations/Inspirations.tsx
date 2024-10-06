@@ -1,8 +1,8 @@
 import React from "react";
 
 import img1 from "@/assets/home-1/inspirition/i-1.png";
-import img2 from "@/assets/home-1/inspirition/i-2.png";
-import img3 from "@/assets/home-1/inspirition/i-3.png";
+// import img2 from "@/assets/home-1/inspirition/i-2.png";
+// import img3 from "@/assets/home-1/inspirition/i-3.png";
 import Image from "next/image";
 
 const Inspirations = () => {

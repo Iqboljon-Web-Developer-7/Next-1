@@ -1,6 +1,4 @@
 import React from "react";
-import Image from "next/image";
-
 import img from "@/assets/home-1/Images.png";
 
 const Furniture = () => {
