@@ -1,26 +1,8 @@
 import React from "react";
 
-import img1 from "@/assets/shop-1/shop1.png";
-
-const Hero = () => {
+const Filter = () => {
   return (
-    <div className="wrapper mx-auto px-4 sm:px-6 lg:px-8">
-      <div
-        className="mb-4 min-h-56 bg-cover bg-no-repeat flex items-center justify-center flex-col"
-        style={{ backgroundImage: `url(${img1.src})` }}
-      >
-        <h1 className="text-3xl font-bold text-gray-900">Shop</h1>
-        <nav className="text-gray-500 text-sm mt-2">
-          <a href="#" className="hover:text-gray-700">
-            Home
-          </a>
-          <span className="mx-2">›</span>
-          <a href="#" className="hover:text-gray-700">
-            Shop
-          </a>
-        </nav>
-      </div>
-
+    <div className="wrapper">
       <div className="flex justify-between items-center flex-wrap gap-5 py-4 border-t border-b border-gray-300 bg-[#FAF1E7] px-5">
         <div className="flex items-center space-x-2">
           <button className="flex items-center space-x-1 bg-gray-200 text-gray-700 px-3 py-2 rounded hover:bg-gray-300">
@@ -104,4 +86,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default Filter;
