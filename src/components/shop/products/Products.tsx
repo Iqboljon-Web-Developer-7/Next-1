@@ -82,7 +82,7 @@ const Products = () => {
     <div className="wrapper mt-4">
       <div className="products__container grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {data.map((item, idx) => (
-          <div className="product bg-[#F4F5F7] max-w-80">
+          <div key={idx} className="product bg-[#F4F5F7] max-w-80">
             <Image
               src={item.img}
               alt="product image"
@@ -101,7 +101,7 @@ const Products = () => {
           </div>
         ))}
         {data.map((item, idx) => (
-          <div className="product bg-[#F4F5F7] max-w-80">
+          <div key={idx} className="product bg-[#F4F5F7] max-w-80">
             <Image
               src={item.img}
               alt="product image"
