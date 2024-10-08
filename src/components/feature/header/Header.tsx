@@ -30,7 +30,7 @@ const Header = () => {
         </div>
         <nav className="header__nav hidden lg:flex gap-5 font-light">
           <Link href={"/"}>Home</Link>
-          <Link href={"/shop"}>Shop</Link>
+          <Link href={"/products"}>Shop</Link>
           <Link href={"/contact"}>Contact</Link>
           <Link href={"/blog"}>Blog</Link>
         </nav>
