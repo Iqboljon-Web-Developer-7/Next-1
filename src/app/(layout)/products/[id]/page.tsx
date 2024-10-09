@@ -1,15 +1,8 @@
-// "use client";
-// import { FC, useEffect, useState } from "react";
 import SinglePageCarousel from "@/components/singlePageCarousel/SinglePageCarousel";
 import { FC } from "react";
 import { BsChevronRight } from "react-icons/bs";
 
 interface ParamsType {
-  params: ParamNestType;
-  data: { record: ProductType[] };
-}
-
-interface ParamNestType {
   id: string;
 }
 
@@ -48,8 +41,9 @@ interface ImagesType {
   images: string[];
 }
 
-const SingleProduct: FC<ParamsType> = async ({ params }) => {
+const SingleProduct: FC<{ params: ParamsType }> = async ({ params }) => {
   const { id } = params;
+
   async function fetchApi(id: string) {
     const response = await fetch(
       "https://api.jsonbin.io/v3/b/67024f68acd3cb34a8920fb3",
@@ -57,20 +51,21 @@ const SingleProduct: FC<ParamsType> = async ({ params }) => {
         headers: {
           "X-Master-Key":
             "$2a$10$.vg2bZmuax/qqiu9DJyk.uwTjcLnUITl8AW/avzdSi8vzDTQb61da",
-          "X-JSON-Path": `$..products[?(@.id == ${id})]`,
+          "X-JSON-Path": `$..products[?(@.id == "${id}")]`, // Added quotes around the id
         },
       }
     );
 
     if (!response.ok) {
       return "";
-      //   throw new Error("Something went swront");
     }
 
     return await response.json();
   }
+
   const data = await fetchApi(id);
   const product = data.record[0];
+
   if (product) {
     console.log(product);
   }
