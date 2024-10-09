@@ -6,22 +6,22 @@ interface ParamsType {
   id: string;
 }
 
-interface AdditionalInfosType {
-  measurements: {
-    width: string;
-    depth: string;
-  };
-}
+// interface AdditionalInfosType {
+//   measurements: {
+//     width: string;
+//     depth: string;
+//   };
+// }
 
-interface ReviewType {
-  rating: number;
-  comments: { rating: number }[];
-}
+// interface ReviewType {
+//   rating: number;
+//   comments: { rating: number }[];
+// }
 
-interface ColorType {
-  name: string;
-  color: string;
-}
+// interface ColorType {
+//   name: string;
+//   color: string;
+// }
 
 // interface ProductType {
 //   additional_infos: AdditionalInfosType;
@@ -36,10 +36,10 @@ interface ColorType {
 //   colors: ColorType[];
 // }
 
-interface ImagesType {
-  color: string;
-  images: string[];
-}
+// interface ImagesType {
+//   color: string;
+//   images: string[];
+// }
 
 const SingleProduct: FC<{ params: ParamsType }> = async ({ params }) => {
   const { id } = params;
