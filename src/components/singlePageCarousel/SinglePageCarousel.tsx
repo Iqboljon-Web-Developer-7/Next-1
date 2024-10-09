@@ -1,5 +1,5 @@
 "use client";
-import React, { FC, useEffect, useRef, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Swiper as SwiperType } from "swiper";
@@ -26,7 +26,7 @@ const SinglePageCarousel: FC<SinglePagePropTypes> = ({ images }) => {
   useEffect(() => {
     window.scroll(0, 0);
   }, []);
-  const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
+  // const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
 
   return (
     <>
@@ -34,7 +34,7 @@ const SinglePageCarousel: FC<SinglePagePropTypes> = ({ images }) => {
         spaceBetween={10}
         navigation={true}
         slidesPerView={1}
-        thumbs={thumbsSwiper ? { swiper: thumbsSwiper } : undefined}
+        // thumbs={thumbsSwiper ? { swiper: thumbsSwiper } : undefined}
         modules={[FreeMode, Navigation, Thumbs]}
         className="mySwiper2"
       >

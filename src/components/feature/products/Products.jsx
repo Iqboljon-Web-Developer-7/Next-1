@@ -1,14 +1,5 @@
 import React from "react";
 
-import p1 from "@/assets/home-1/products/p-1.png";
-import p2 from "@/assets/home-1/products/p-2.png";
-import p3 from "@/assets/home-1/products/p-3.png";
-import p4 from "@/assets/home-1/products/p-4.png";
-import p5 from "@/assets/home-1/products/p-5.png";
-import p6 from "@/assets/home-1/products/p-6.png";
-import p7 from "@/assets/home-1/products/p-7.png";
-import p8 from "@/assets/home-1/products/p-8.png";
-import Image from "next/image";
 import { error } from "console";
 import Product from "../product/Product";
 
