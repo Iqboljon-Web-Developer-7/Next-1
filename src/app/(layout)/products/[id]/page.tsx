@@ -23,18 +23,18 @@ interface ColorType {
   color: string;
 }
 
-interface ProductType {
-  additional_infos: AdditionalInfosType;
-  id: string;
-  images: ImagesType[];
-  title: string;
-  category: { primary: string };
-  price: string;
-  originalPrice: string;
-  description: string;
-  reviews: ReviewType;
-  colors: ColorType[];
-}
+// interface ProductType {
+//   additional_infos: AdditionalInfosType;
+//   id: string;
+//   images: ImagesType[];
+//   title: string;
+//   category: { primary: string };
+//   price: string;
+//   originalPrice: string;
+//   description: string;
+//   reviews: ReviewType;
+//   colors: ColorType[];
+// }
 
 interface ImagesType {
   color: string;
