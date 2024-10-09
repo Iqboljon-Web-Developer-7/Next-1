@@ -4,11 +4,6 @@ import SinglePageCarousel from "@/components/singlePageCarousel/SinglePageCarous
 import { FC } from "react";
 import { BsChevronRight } from "react-icons/bs";
 
-interface CarouselImgsTypes {
-  images: string[];
-  color: string;
-}
-
 interface ParamsType {
   params: ParamNestType;
   data: { record: ProductType[] };
