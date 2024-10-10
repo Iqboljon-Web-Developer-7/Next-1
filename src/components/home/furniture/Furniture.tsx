@@ -1,11 +1,14 @@
 import React from "react";
 import img from "@/assets/home-1/Images.png";
 
-const Furniture = () => {
+import { getTranslations } from "next-intl/server";
+const Furniture = async () => {
+  const t = await getTranslations("HomePage.section5");
+
   return (
     <section className="furniture my-10">
       <div className="furniture__info text-center">
-        <p className="tracking-wide text-[#616161]">Share your setup with</p>
+        <p className="tracking-wide text-[#616161]">{t("p1")}</p>
         <h3 className="text-4xl font-semibold break-words">#FuniroFurniture</h3>
       </div>
       <div

@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
-import Link from "next/link";
+import React, { useEffect, useState } from "react";
+// import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import MobileNav from "../../home/navHeader/NavHeader";
 
 import { RiMenu5Line } from "react-icons/ri";
@@ -14,8 +15,43 @@ import { IoCartOutline } from "react-icons/io5";
 import logo from "@/assets/header/website-logo.svg";
 import Image from "next/image";
 
+import { useTranslations } from "next-intl";
+
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { useRouter } from "@/i18n/routing";
+
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [currentLang, setCurrentLang] = useState("");
+
+  const t = useTranslations("Header");
+
+  const router = useRouter();
+
+  const changeRoute = (path: string) => {
+    router.push(path);
+
+    setCurrentLang(path);
+    document.cookie = `NEXT_LOCALE=${path}`;
+  };
+
+  useEffect(() => {
+    const cookies = document.cookie.split("; ");
+    for (const cookie of cookies) {
+      const [cookieName, cookieValue] = cookie.split("=");
+      if (cookieName === "NEXT_LOCALE") {
+        setCurrentLang(cookieValue);
+      }
+    }
+  }, []);
 
   return (
     <header className={`header__container bg-[#F8F8F8] px-4`}>
@@ -29,16 +65,46 @@ const Header = () => {
           </Link>
         </div>
         <nav className="header__nav hidden lg:flex gap-5 font-light">
-          <Link href={"/"}>Home</Link>
-          <Link href={"/products"}>Shop</Link>
-          <Link href={"/contact"}>Contact</Link>
-          <Link href={"/blog"}>Blog</Link>
+          <Link href={"/"}>{t("home")}</Link>
+          <Link href={"/products"}>{t("shop")}</Link>
+          <Link href={"/contact"}>{t("contact")}</Link>
+          <Link href={"/blog"}>{t("blog")}</Link>
         </nav>
         <div className="header__contact flex items-center justify-center gap-6 text-2xl">
           <CiUser />
           <IoSearchOutline />
           <FaRegHeart />
           <IoCartOutline />
+          <Select onValueChange={(e) => changeRoute(e)} value={currentLang}>
+            <SelectTrigger className="w-fit">
+              <SelectValue placeholder={currentLang} />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectGroup onChange={(e) => console.log(e.target)}>
+                <SelectLabel>{t("Languages")}</SelectLabel>
+                <SelectItem value="uz">
+                  <div className="flex items-center justify-center w-full gap-4">
+                    <span>Uzb</span>{" "}
+                    <img
+                      className="max-w-4"
+                      src="https://cdn-icons-png.flaticon.com/512/197/197416.png"
+                      alt=""
+                    />
+                  </div>
+                </SelectItem>
+                <SelectItem value="en">
+                  <div className="flex items-center justify-center w-full gap-4">
+                    <span>Eng</span>{" "}
+                    <img
+                      className="max-w-4"
+                      src="https://cdn-icons-png.flaticon.com/512/555/555526.png"
+                      alt=""
+                    />
+                  </div>
+                </SelectItem>
+              </SelectGroup>
+            </SelectContent>
+          </Select>
           <RiMenu5Line
             className="lg:hidden text-3xl"
             onClick={() => setIsOpen((prev) => !prev)}

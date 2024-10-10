@@ -1,39 +1,43 @@
-const Footer = () => {
+import { getTranslations } from "next-intl/server";
+
+const Footer = async () => {
+  const t = await getTranslations("Footer");
   return (
     <footer className="bg-gray-100 py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo & Address */}
           <div>
-            <h2 className="font-bold text-2xl mb-4">Funiro.</h2>
+            <h2 className="font-bold text-2xl mb-4">{t("h1")}</h2>
             <p className="text-gray-500">
-              400 University Drive Suite 200 Coral Gables, <br />
-              FL 33134 USA
+              {t("p1.first")}
+              <br />
+              {t("p1.second")}
             </p>
           </div>
 
           {/* Links Column */}
           <div>
-            <h3 className="font-semibold text-gray-600 mb-4">Links</h3>
+            <h3 className="font-semibold text-gray-600 mb-4">{t("h2")}</h3>
             <ul className="space-y-2">
               <li>
                 <a href="#" className="text-gray-600 hover:text-black">
-                  Home
+                  {t("home")}
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-600 hover:text-black">
-                  Shop
+                  {t("shop")}
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-600 hover:text-black">
-                  About
+                  {t("about")}
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-600 hover:text-black">
-                  Contact
+                  {t("contact")}
                 </a>
               </li>
             </ul>
@@ -45,17 +49,17 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <a href="#" className="text-gray-600 hover:text-black">
-                  Payment Options
+                  {t("a1")}
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-600 hover:text-black">
-                  Returns
+                  {t("a2")}
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-600 hover:text-black">
-                  Privacy Policies
+                  {t("a3")}
                 </a>
               </li>
             </ul>
@@ -63,18 +67,18 @@ const Footer = () => {
 
           {/* Newsletter Subscription */}
           <div>
-            <h3 className="font-semibold text-gray-600 mb-4">Newsletter</h3>
+            <h3 className="font-semibold text-gray-600 mb-4">{t("h3")}</h3>
             <form className="flex space-x-2">
               <input
                 type="email"
                 className="border border-gray-300 rounded px-4 py-2 w-full"
-                placeholder="Enter Your Email Address"
+                placeholder={t("placeholder")}
               />
               <button
                 type="submit"
                 className="bg-black text-white rounded px-4 py-2 hover:bg-gray-800"
               >
-                Subscribe
+                {t("btn")}
               </button>
             </form>
           </div>
@@ -82,7 +86,7 @@ const Footer = () => {
 
         {/* Bottom Section */}
         <div className="mt-10 border-t border-gray-300 pt-6 text-center text-gray-500 text-sm">
-          <p>© 2023 Funiro. All rights reserved.</p>
+          <p>{t("p2")}</p>
         </div>
       </div>
     </footer>

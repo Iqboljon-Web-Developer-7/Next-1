@@ -1,25 +1,21 @@
 import React from "react";
 
 import img1 from "@/assets/home-1/inspirition/i-1.png";
-// import img2 from "@/assets/home-1/inspirition/i-2.png";
-// import img3 from "@/assets/home-1/inspirition/i-3.png";
 import Image from "next/image";
 
-const Inspirations = () => {
+import { getTranslations } from "next-intl/server";
+
+const Inspirations = async () => {
+  const t = await getTranslations("HomePage.section4");
   return (
     <div className="bg-gray-50 py-20">
       <div className="container mx-auto flex items-center justify-between flex-col lg:flex-row gap-5">
         {/* Left Section: Text */}
         <div className="max-w-lg text-center lg:text-start">
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">
-            50+ Beautiful rooms inspiration
-          </h2>
-          <p className="text-gray-600 mb-6">
-            Our designer already made a lot of beautiful prototypes of rooms
-            that inspire you.
-          </p>
+          <h2 className="text-4xl font-bold text-gray-800 mb-4">{t("h1")}</h2>
+          <p className="text-gray-600 mb-6">{t("p1")}</p>
           <button className="bg-yellow-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-yellow-700">
-            Explore More
+            {t("btn")}
           </button>
         </div>
 
