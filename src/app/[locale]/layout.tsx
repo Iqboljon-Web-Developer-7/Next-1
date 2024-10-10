@@ -1,5 +1,5 @@
 import Header from "@/components/feature/header/Header";
-import React, { FC } from "react";
+import React from "react";
 import "@/scss/main.scss";
 import Footer from "@/components/feature/footer/Footer";
 

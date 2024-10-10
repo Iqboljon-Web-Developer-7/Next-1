@@ -6,11 +6,7 @@ import recentBlog1 from "@/assets/blog/recent-blogs/recent-1.png";
 import recentBlog2 from "@/assets/blog/recent-blogs/recent-2.png";
 import recentBlog3 from "@/assets/blog/recent-blogs/recent-3.png";
 
-import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/routing";
-
 export default function Blog() {
-  const t = useTranslations("HomePage");
   return (
     <div className="bg-gray-100 py-10">
       <div className="container mx-auto px-4 lg:px-8">
